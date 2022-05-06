@@ -24,3 +24,29 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+/* IMPORT FONTS */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    src: url("./assets/fonts/Poppins-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Poppins-Light";
+    font-style: normal;
+    src: url("./assets/fonts/Poppins-Light.ttf");
+  }
+  @font-face {
+    font-family: "Poppins-SemiBold";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/fonts/Poppins-SemiBold.ttf");
+  }
+
+/** GLOBAL CSS **/
+:root[mode="ios"],
+:root[mode="md"] {
+  --ion-font-family: "Poppins" !important;
+  font-family: "Poppins" !important;
+}

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_key: 'ac591438-fdc1-483c-80ba-d476c27ad03a',
+  base_url: 'https://holidayapi.com',
 };
 
 /*

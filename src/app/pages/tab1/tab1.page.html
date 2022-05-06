@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Countries</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid fixed *ngIf="countries.length > 0">
+    <ion-row>
+      <ion-col *ngFor="let country of countries" size="12" size-sm="6" size-md="4" size-lg="3"  >
+        <ion-card (click)="openDetailCountry(country)">
+          <ion-card-header>
+            <ion-card-title>{{ country.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img [src]="getFlag(country.code)"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-infinite-scroll #infiniteCountries threshold="25%" [disabled]="false" position="bottom" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

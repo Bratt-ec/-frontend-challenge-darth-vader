@@ -1,0 +1,42 @@
+<ion-content>
+  <div class="content-login">
+    <div class="content-form">
+      <div class="form-login">
+        <div class="content-logo">
+          <ion-img src="assets/images/astronaut.svg"></ion-img>
+        </div>
+        <ion-item lines="none">
+          <ion-icon name="mail-outline" slot="start" color="primary"></ion-icon>
+          <ion-input
+            type="email"
+            placeholder="Email"
+            class="input-login"
+            #email
+            [(ngModel)]="loginCredentials.email"
+            (keydown.enter)="nextInput(1)"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-icon
+            name="lock-closed-outline"
+            slot="start"
+            color="primary"
+          ></ion-icon>
+          <ion-input
+            type="password"
+            placeholder="Contraseña"
+            class="input-login"
+            #password
+            (keydown.enter)="login(loginCredentials)"
+            [(ngModel)]="loginCredentials.password"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button (click)="login(loginCredentials)" color="secondary" expand="block">
+          Iniciar Sesión
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
