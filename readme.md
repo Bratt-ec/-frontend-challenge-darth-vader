@@ -1,7 +1,7 @@
 # Frontend-challenge-darth-vader ::: Bryan Castro
 
 ### APIs used.
-<b> Get holidays:</b> https://m3o.com/holidays/api#List <br>
+<b> Get holidays:</b> https://holidayapi.com/ <br>
 <b> Get Flags:</b> https://www.banderas-mundo.es/descargar/api
 
 ### UI Inspiration
