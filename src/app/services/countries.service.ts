@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class CountriesService {
 
   apiFlags:string = 'https://flagcdn.com/w320';
   countrySelected:any = null;
+  eventSaveCountry =  new Subject<any>();
+  countrySaved:Array<any> = [];
 
   constructor(
     private http: HttpClient

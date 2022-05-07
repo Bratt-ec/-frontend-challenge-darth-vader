@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'country/:countryCode',
-    loadChildren: () => import('./pages/detail-country/detail-country.module').then( m => m.DetailCountryPageModule)
+    loadChildren: () => import('./pages/detail-country/detail-country.module').then( m => m.DetailCountryPageModule),
+    canActivate: [AuthGuard],
   },
 ];
 

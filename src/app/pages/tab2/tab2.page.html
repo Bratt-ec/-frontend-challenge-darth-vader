@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Saved
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,8 +9,35 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Saved</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <ion-card class="empty-counties" *ngIf="countrySaved.length == 0">
+    <ion-card-header>
+      <ion-card-title>Empty!!</ion-card-title>
+      <ion-card-subtitle>No country has been added</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img src="assets/images/empty.svg"></ion-img>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid fixed *ngIf="countrySaved.length > 0">
+    <ion-row>
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3" *ngFor="let country of countrySaved">
+        <ion-button (click)="saveCountry(country)" fill="clear" color="primary" class="btn-save">
+          <ion-icon slot="icon-only" [name]="country.saved ? 'bookmark' : 'bookmark-outline'"></ion-icon>
+        </ion-button>
+        <ion-card (click)="openDetailCountry(country)">
+          <ion-card-header>
+            <ion-card-title>{{ country.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img [src]="getFlag(country.code)"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

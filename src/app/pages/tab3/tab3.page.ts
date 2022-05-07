@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Storage } from '@capacitor/storage';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(
+    private navCtrl: NavController
+  ) {}
 
+  async logout(){
+    await Storage.clear();
+    this.navCtrl.navigateRoot('/login');
+  }
 }

@@ -14,10 +14,10 @@ export class NoAuthGuard implements CanActivate {
   async canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     try {
       const token:string =  await this.__auth.getTokenAuth();
-      if (token == '') {
-        return true;
-      }else{
+      if (token) {
         this.navCtrl.navigateRoot('home/app/countries');
+        return false;
+      }else{
         return true;
       }
     } catch (error) {

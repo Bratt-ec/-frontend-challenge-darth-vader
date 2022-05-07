@@ -50,3 +50,15 @@
   --ion-font-family: "Poppins" !important;
   font-family: "Poppins" !important;
 }
+
+ion-card{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 100%;
+}
+
+.btn-save{
+  position: absolute;
+  z-index: 100;
+  right: 13px;
+  top: 20px
+}

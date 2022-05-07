@@ -15,11 +15,11 @@ export class AuthGuard implements CanActivate {
   async canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     try {
       const token:string =  await this.__auth.getTokenAuth();
-      if (token == '') {
+      if (token) {
+        return true;
+      }else{
         this.navCtrl.navigateRoot('login');
         return false;
-      }else{
-        return true;
       }
     } catch (error) {
       console.log('Error AuthGuard:',error);

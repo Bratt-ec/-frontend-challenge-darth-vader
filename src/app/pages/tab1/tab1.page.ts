@@ -53,4 +53,9 @@ export class Tab1Page {
     this.__countries.setCountrySelected = country;
     this.navCtrl.navigateForward(`home/app/countries/country/${country.code}`);
   }
+
+  saveCountry(country:any){
+    country.saved = (country.saved) ? false : true;
+    this.__countries.eventSaveCountry.next(country);
+  }
 }
