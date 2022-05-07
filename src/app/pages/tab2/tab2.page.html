@@ -26,10 +26,7 @@
   <ion-grid fixed *ngIf="countrySaved.length > 0">
     <ion-row>
       <ion-col size="12" size-sm="6" size-md="4" size-lg="3" *ngFor="let country of countrySaved">
-        <ion-button (click)="saveCountry(country)" fill="clear" color="primary" class="btn-save">
-          <ion-icon slot="icon-only" [name]="country.saved ? 'bookmark' : 'bookmark-outline'"></ion-icon>
-        </ion-button>
-        <ion-card (click)="openDetailCountry(country)">
+        <ion-card>
           <ion-card-header>
             <ion-card-title>{{ country.name }}</ion-card-title>
           </ion-card-header>
